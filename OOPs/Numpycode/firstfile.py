@@ -115,3 +115,56 @@ print(arrshp1.shape)
 arrshp2 = np.array([1, 2, 3, 4], dtype="S", ndmin=5)
 print(arrshp2)
 print(arrshp2.shape)
+
+# Array reshape
+# 1D - 2D
+# Shape tells how many items are present in the dimension
+
+arrshp3 = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+arrshp3_re = arrshp3.reshape(4, 3)
+arrshp3_re2 = arrshp3.reshape(1,3,4)
+print(arrshp3_re)
+print(arrshp3_re.shape)
+print(arrshp3.shape)
+print(arrshp3_re2)
+print(arrshp3_re.base)
+print("\n")
+arrshp3_re3 = arrshp3.reshape(2, 2, -1)
+print(arrshp3_re3)
+print(arrshp3_re3.reshape(-1))
+
+# Iteration
+arriter1 = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+arriter2 = np.array([1, 2, 3])
+
+print("Array Iteration")
+for x in np.nditer(arriter1):
+    print(x, end="-")
+print("\n")
+for val in np.nditer(arriter2, flags=["buffered"], op_dtypes=["S"]):
+    print(val, end="-")
+
+# Using np.ndenumerate
+print("\n")
+
+for idx, x in np.ndenumerate(arriter1):
+    print(idx, x)
+
+arrct1 = np.array([[1, 2], [3, 4]])
+arrct2 = np.array([[5, 6], [7, 8]])
+# Join arrays using concatenate
+
+print("Array Join Concatenate")
+arrctjoin1 = np.concatenate((arrct1, arrct2), axis=0)
+arrctjoin2 = np.concatenate((arrct1, arrct2), axis=1)
+print("Join 1", arrctjoin1)
+print("Join 2", arrctjoin2)
+
+# Join arrays using stack
+print("\n")
+print("Array Join stack")
+arrstackjoin1 = np.stack((arrct1, arrct2), axis=0)
+arrstackjoin2 = np.stack((arrct1, arrct2), axis=1)
+print("Join 1", arrstackjoin1)
+print("Join 2", arrstackjoin2)
+
