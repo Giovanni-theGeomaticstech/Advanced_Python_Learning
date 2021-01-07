@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "apps_django_gio"
+version = "0.1.0"
+description = "Here I will be building apps using django"
+authors = ["Gio <gio.harvey14@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "3.1.1"
+black = "^20.8b1"
+postgres = "^3.0.0"
+isort = "^5.7.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
