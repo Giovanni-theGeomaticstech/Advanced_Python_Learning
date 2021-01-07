@@ -31,21 +31,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.admin', # Admin stuff
+    'django.contrib.auth', # Admin stuff
+    'django.contrib.contenttypes', # Admin stuff
+    'django.contrib.sessions', # Admin stuff
+    'django.contrib.messages', # Admin stuff
+    'django.contrib.staticfiles', # Admin stuff
+    'myapp1', #Registering this app
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware', # Admin stuff
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware', # Admin stuff
+    'django.contrib.messages.middleware.MessageMiddleware', # Admin stuff
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
