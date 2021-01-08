@@ -221,4 +221,5 @@
 - `blocj define (content and title)`
 - To define a tag block we do `{% block name_block%} Anything here {% endblock %}`
 
+
   
