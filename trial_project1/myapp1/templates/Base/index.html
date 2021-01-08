@@ -1,0 +1,18 @@
+{% extends "Base/main_template.html" %} <!--Inheriting from this template-->
+{% block title %} My User Page {% endblock %}
+
+{% block content %}
+<h1>Hello World</h1>
+<div>Todays date is : {{today}}</div>
+<!--Here we added the if tag -->
+{% if user_name == 'Gio' %} It is our boi Gio
+{% elif user_name == 'Cory' %} It is our boi C-Bell
+{% else %} We do not Care
+{% endif %}
+<div>User: {{user_name}}</div>
+<div class="outer_container" style="color:red;">
+    {% for day in days_of_week %}
+    <div style="display:block;">{{day}}</div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -155,3 +155,70 @@
 - The include this url mapping into our project `urls.py`
 - steps in the `myapp1` create a `url.py` file
 - Then `from django.urls import include, path`
+  
+#### Passing Parameters to Views
+- Sending Parameters to Views is done by capturing them with the `regexp` in `url pattern`
+- [urls](https://docs.djangoproject.com/en/3.1/topics/http/urls/#passing-extra-options-to-view-functions)
+- `path('name/<type(variable_name):variable_name>')`
+- Note `HttpResponse(string)` or `render(file.html)`
+
+### Template System
+- [Templates documentation](https://docs.djangoproject.com/en/3.1/topics/templates/)
+- Django makes it possible to separate `Python` and `HTML`
+- The Python goes in `views` and `HTML` goes in templates
+- Linking the two Django relies on the `render function` and the `Django Template Language`
+
+#### The Render Function
+- Takes three parameters `request`, `the path to the template`, `dictionary of parameters`
+- `Request`: The initial request.
+- `The path to the template`: This is the path relative to the `Template_DIRS` option in project `settings.py` variable
+- `Dictionary of parameters`: A dictionary that contains all variables needed in the template.
+- This variable can be created or you can use `locals()` `to pass all local variables declared in the view`
+
+#### Django Template Language(DTL)
+- Django's template engine offers a mini-language to define the user-facing layer of the application
+- DISPLAYING VARIABLES
+- A variable looks like this: `{{variable}}`
+- The `template replaces the variable with the one sent by the view in the third parameter`
+- By default Django looks in each `Installed_Apps` subdirectories for templates
+- `APP_DIRS=True` allow this behaviour
+- [Removing Hardcoded urls in Templates](https://docs.djangoproject.com/en/3.1/intro/tutorial03/#removing-hardcoded-urls-in-templates)
+
+#### Filters
+- These helps to modify variables at display time
+- The structure of filters follow this format `{{var|filters}}`
+- For eg: `{{string|truncatewords:80}}` will truncate the string so you only see the first 80 words
+- `{{string:lower}}` - Converts the string to lowercase
+- `{{}string|escape|linebreaks}` First escapes string contents and then converts line breaks to tags
+- You can also set default for a variable
+
+#### Tags
+- These let you perform operations: if conditions, for loops, template inheritance and more
+- Just like Python you can use `if, else and elif` in your template
+- Tags are called via `{% tag body %}`
+##### Tags if 
+- `{% if today.day == 1 %} The first day of the month.
+{% elif today == 30 %} the last day of the month. {% else %} I don't know.
+  {% endif %}`.
+  
+##### Tags for
+- `{% for day in days_of_week %}`
+
+##### Block and Extend Tags
+- A template system cannot be complete without `template inheritance`
+- Meaning when designing templates we should have a `main template` which holds child's template
+- will fill according to his own need.
+- Like a page need a special css for the selected tab
+- In `main_template.html we add` :
+- `<title>{% block title%}Page Title{% endblock%}</title>` For the title
+- `{% block content %} Body content {% endblock %}` FOr the body
+- Now in the template file `index.template`
+- `{% extends "main_template.html" %}` `{% block title %}` `My User Page` `{% endblock %}`
+- Then put the body within `{% block content %} Content {% endblock %}`
+- In `main_template.html` we define blocks using the tag block
+- The title block will have the title and the content block will have the main content
+- now in `index.html` we use extends to inherit from the `main_template.html` then we fill the
+- `blocj define (content and title)`
+- To define a tag block we do `{% block name_block%} Anything here {% endblock %}`
+
+  
