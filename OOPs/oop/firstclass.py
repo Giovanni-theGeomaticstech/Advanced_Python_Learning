@@ -47,4 +47,3 @@ class Bulldog(Dog):
 print(JackRussellTerrier("Mickey", 9))
 print(JackRussellTerrier("Mickey", 9).species)
 print(JackRussellTerrier("Mickey", 9).species)
-

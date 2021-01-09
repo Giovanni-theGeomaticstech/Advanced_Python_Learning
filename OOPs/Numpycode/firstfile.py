@@ -60,19 +60,18 @@ print(arr3Dtest[0, 1, 2])
 arr1Dtest = np.array([1, 2, 3, 4, 5, 6, 7])
 
 
-
 # Checking the Data Tyoe of an Array
 print("Data type of an array int: ", arr1D.dtype)
 print("Data type of an array str: ", np.array(["fj", "fig"]).dtype)
 
 # Creating array with defined datatype
-arrS = np.array([1,2,3,4,5], dtype='S')
+arrS = np.array([1, 2, 3, 4, 5], dtype="S")
 print(arrS)
 
 # We can also define size too for
 # i, u, f, S, U
 
-arrayInt4 = np.array([1,2,3,4], dtype='i4')
+arrayInt4 = np.array([1, 2, 3, 4], dtype="i4")
 print(arrayInt4)
 
 # Converting Data Type on Existing Arrays
@@ -80,7 +79,7 @@ print(arrayInt4)
 # of the array with astype() method
 # Astype() creates a copy of the array and allows you to specify the data type as a parameter
 
-arrayfloat = arrayInt4.astype('f')
+arrayfloat = arrayInt4.astype("f")
 print(arrayfloat)
 print(arrayfloat.dtype)
 
@@ -122,7 +121,7 @@ print(arrshp2.shape)
 
 arrshp3 = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
 arrshp3_re = arrshp3.reshape(4, 3)
-arrshp3_re2 = arrshp3.reshape(1,3,4)
+arrshp3_re2 = arrshp3.reshape(1, 3, 4)
 print(arrshp3_re)
 print(arrshp3_re.shape)
 print(arrshp3.shape)
@@ -167,4 +166,3 @@ arrstackjoin1 = np.stack((arrct1, arrct2), axis=0)
 arrstackjoin2 = np.stack((arrct1, arrct2), axis=1)
 print("Join 1", arrstackjoin1)
 print("Join 2", arrstackjoin2)
-

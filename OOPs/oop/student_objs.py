@@ -5,11 +5,12 @@ import random
 class StudentSlots:
 
     grade = 8
-    __slots__ = ['first_name', 'last_name']
+    __slots__ = ["first_name", "last_name"]
 
     def __init__(self, first_name, last_name):
         self.first_name = first_name
         self.last_name = last_name
+
 
 class Student:
 
@@ -60,17 +61,12 @@ class Student:
         return "Study, Play, Sleep"
 
 
-
-
-
 new_stud = Student("John", "Smith")
 print(Student.grade)
 print(new_stud.grade)
-cls_student = Student.from_dict({"first_name":"kl", "last_name":"yal"})
+cls_student = Student.from_dict({"first_name": "kl", "last_name": "yal"})
 print(type(cls_student))
 # print(new_stud.name)
 # new_stud.name = "Jonny Brochure"
 # print(new_stud.ager)
 # new_stud.ager = random.randint(10, 1000)
-
-
