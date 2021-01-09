@@ -108,5 +108,6 @@ a message will printout to stdout whenever the user presses your button
 - This Calculator will support:
 - `Addition, Subtraction, Multiplication, Division`
 - Using [KV language](https://blog.kivy.org/2019/06/widget-interactions-between-python-and-kv/)
-
+- `Check calc app widget for editing my class and still using Kivy Language`
+- `print(OuterContainerWidget().ids)` shows the ids
 

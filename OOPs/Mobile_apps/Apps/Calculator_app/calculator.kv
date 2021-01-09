@@ -1,19 +1,14 @@
 <OuterContainerWidget>:
-    orientation: 'vertical'
     BoxLayout:
         orientation: 'vertical'
         Label:
+            id: title
             text: 'Calculator Application'
             size_hint: (1, .3)
-        TextInput:
-            id: input_box
-            multiline: False
-            readonly: True
-            halign: 'right'
-            size_hint: (0.8, .3)
-            pos_hint: {'center_x': 0.5, 'center_y': 0}
         CalcButtonsWidget:
+            id: calc_buttons
             pos_hint: {'center_x': 0.6, 'center_y': 0}
             Label:
                 id: buttons_widget
+
 
